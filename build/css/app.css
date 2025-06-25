@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body, html {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.tasks {
+  margin: auto;
+  padding-left: 0;
+}
+.tasks li {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.tasks li:last-child {
+  margin-bottom: 0;
+}
+.tasks li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
+/*
+Task 1
+*/
+.masonry-grid {
+  column-count: 1;
+  column-gap: 16px;
+  padding: 16px;
+}
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+.masonry-grid .masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  break-inside: avoid;
+}
+.masonry-grid .masonry-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*
+Task 2
+*/
+.accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.accordion .accordion-item {
+  margin-bottom: 10px;
+}
+.accordion .accordion-item .accordion-header {
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.accordion .accordion-item .accordion-header svg {
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+.accordion .accordion-item .accordion-header.active {
+  background: #f3f4f6;
+  color: #111827;
+}
+.accordion .accordion-item .accordion-header.active svg {
+  transform: rotate(0deg);
+}
+.accordion .accordion-item .accordion-content {
+  padding: 12px 20px;
+  background: transparent;
+  display: none;
+  border-color: #e5e7eb;
+  border-width: 1px;
+  border-top-width: 0;
+  border-style: solid;
+  color: #6b7280;
+  line-height: 140%;
+  font-size: 16px;
+}
+.accordion .accordion-item .accordion-content a {
+  color: #7ab7ff;
+  text-decoration: none;
+}
+.accordion .accordion-item .accordion-content a:hover {
+  color: #4ca0ec;
+}
+@media (max-width: 768px) {
+  .accordion {
+    max-width: 90%;
+  }
+}
+
+/*
+Task 3
+*/
+header {
+  background: #000;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header .container-fluid {
+  max-width: 95%;
+  margin: 0 auto;
+}
+header .container-fluid .content {
+  display: flex;
+  align-items: center;
+}
+header .container-fluid .content .logo {
+  font-weight: bold;
+  font-size: 32px;
+  text-decoration: none;
+  color: #fff;
+}
+header .container-fluid .content .menu {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+header .container-fluid .content .menu li {
+  position: relative;
+  padding: 20px 0;
+}
+header .container-fluid .content .menu li a {
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  transition: all ease 1s;
+  text-decoration: none;
+}
+header .container-fluid .content .menu li a:hover {
+  color: #F8B58F;
+  transition: all ease 1s;
+}
+header .container-fluid .content .menu li a.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .container-fluid .content .menu li a.dropdown svg {
+  width: 8px;
+  height: 8px;
+  transform: rotate(180deg);
+}
+header .container-fluid .content .menu li:last-child {
+  display: none;
+}
+header .container-fluid .content .menu li .menu-btn {
+  width: 89px;
+  height: 47px;
+  border-radius: 23.5px;
+  background: #fff;
+  cursor: pointer;
+}
+header .container-fluid .content .menu li ul {
+  display: none;
+  position: absolute;
+  background: #000;
+  padding: 30px 15px 15px 15px;
+  list-style: none;
+}
+header .container-fluid .content .menu li ul li {
+  padding: 0;
+  margin-bottom: 10px;
+}
+header .container-fluid .content .menu li ul li a {
+  white-space: nowrap;
+}
+header .container-fluid .content .menu li ul li:last-child {
+  display: block;
+  margin-bottom: 0;
+}
+header .container-fluid .content .menu li:hover ul {
+  display: block;
+}
+header .menu-btn svg line {
+  transition: transform 0.3s ease, y 0.3s ease;
+  transform-origin: center;
+}
+header .menu-btn.open .line1 {
+  transform: rotate(45deg) translateY(4px);
+}
+header .menu-btn.open .line2 {
+  transform: rotate(-45deg) translateY(-4px);
+}
+@media (max-width: 768px) {
+  header .container-fluid .content .menu li {
+    display: none;
+  }
+  header .container-fluid .content .menu li:last-child {
+    display: block;
+  }
+}
+
+.overlay {
+  position: fixed;
+  background: #000;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0%;
+  z-index: 999;
+  overflow: hidden;
+  transition: 0.35s;
+}
+.overlay.open {
+  height: 100%;
+  transition: 0.35s;
+}
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+.overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+.overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  text-align: left;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li ul {
+  height: auto;
+  width: 100%;
+  margin: 10px 0;
+  display: none;
+}
+.overlay ul li ul li {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.overlay ul li ul li:last-child {
+  margin-bottom: 0;
+}
+.overlay ul li ul li a {
+  font-size: 16px;
+}
+.overlay ul li.active a.dropdown svg {
+  transform: rotate(0deg);
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.35s;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 130%;
+}
+.overlay ul li a.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.overlay ul li a.dropdown svg {
+  width: 8px;
+  height: 8px;
+  transform: rotate(180deg);
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+.fadeInRight {
+  animation-name: fadeInRight;
+}

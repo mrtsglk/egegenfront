@@ -1,0 +1,31 @@
+.masonry-grid {
+  column-count: 1;
+  column-gap: 16px;
+  padding: 16px;
+}
+@media (min-width: 600px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+.masonry-grid .masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  break-inside: avoid;
+}
+.masonry-grid .masonry-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
